@@ -3,11 +3,15 @@ sudo: required
 services:
   - docker
 
+before_install:
+   - if [[ "${TRAVIS_BRANCH}" == "master" ]] ; then
+       docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
+     fi
+     
 script:
    - for DIST in lenny etch squeeze ; do 
        make DEBIAN_VERSION=${DIST} && 
-         if [[ "${TRAVIS_BRANCH}" == "master" ]] ; then
-           docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
-           make DEBIAN_VERSION=${DIST} push ;
-         fi
+       if [[ "${TRAVIS_BRANCH}" == "master" ]] ; then
+         make DEBIAN_VERSION=${DIST} push ;
+       fi
      done
