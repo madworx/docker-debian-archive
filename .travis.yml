@@ -4,5 +4,8 @@ services:
   - docker
 
 script:
-   - make DEBIAN_VERSION=lenny push
-   
+   - make DEBIAN_VERSION=lenny
+   - if [[ "$TRAVIS_BRANCH" == "master" ]]; then
+       docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
+       make DEBIAN_VERSION=lenny push ;
+     fi
