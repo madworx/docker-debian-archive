@@ -5,7 +5,7 @@ services:
 
 script:
    - for DIST in lenny etch squeeze ; do \
-       make DEBIAN_VERSION=${DIST} && \
+       make DEBIAN_VERSION=${DIST} && 
          if [[ "${TRAVIS_BRANCH}" == "master" ]] ; then
            docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD ;
            make DEBIAN_VERSION=${DIST} push ;
