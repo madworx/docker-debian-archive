@@ -1,1 +1,11 @@
-Docker images for old (archived) Debian releases
+[![Build Status](https://travis-ci.org/madworx/docker-debian-archive.svg?branch=master)](https://travis-ci.org/madworx/docker-debian-archive)
+
+# Docker images for old (archived) Debian releases
+
+Currently, the following images are available and automatically built:
+
+* Debian 4 [Etch](https://www.debian.org/releases/etch/) (~2007)
+* Debian 5 [Lenny](https://www.debian.org/releases/etch/) (~2009)
+* Debian 6 [Squeeze](https://www.debian.org/releases/squeeze/) (~2011)
+
+Later releases are readily available for the [official Debian repo at Docker Hub](https://hub.docker.com/_/debian/).
