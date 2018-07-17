@@ -16,7 +16,7 @@ script:
      ( make DEBIAN_VERSION=${DIST} && \
        is_travis_master_push && \
        echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin && \
-       make DEBIAN_VERSION=${DIST} push ) && true
+       make DEBIAN_VERSION=${DIST} push ) || true
 
 jobs:
   include:
