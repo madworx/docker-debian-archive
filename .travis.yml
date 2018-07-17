@@ -27,4 +27,4 @@ jobs:
       env: DIST
       script:
         - is_travis_master_push &&
-          dockerhub_set_description madworx/debian-archive README.md 
+          dockerhub_set_description madworx/debian-archive README.md || true
