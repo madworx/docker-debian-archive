@@ -1,3 +1,5 @@
+langugage: c
+
 sudo: required
 
 services:
