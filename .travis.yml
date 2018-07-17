@@ -26,6 +26,5 @@ jobs:
     - stage: Publish project description to Docker hub
       env: DIST
       script:
-        - set ;
-          is_travis_master_push &&
+        - is_travis_master_push &&
           dockerhub_set_description madworx/debian-archive README.md 
