@@ -13,7 +13,7 @@ before_install:
    - source <(curl https://raw.githubusercontent.com/madworx/cd-ci-glue/master/src/cd-ci-glue.bash)
    
 script:
-   - (make DEBIAN_VERSION=${DIST} &&   
+   - (make DEBIAN_VERSION=${DIST} &&
       is_travis_master_push && dockerhub_push_image madworx/debian-archive:${DIST}) || true
 
 jobs:

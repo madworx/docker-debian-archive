@@ -9,3 +9,9 @@ Currently, the following images are available and automatically built:
 * Debian 6 [Squeeze](https://www.debian.org/releases/squeeze/) (~2011)
 
 Later releases are readily available for the [official Debian repo at Docker Hub](https://hub.docker.com/_/debian/).
+
+## Source
+
+Everything is hosted on [github](https://github.com/madworx/docker-debian-archive).
+
+
