@@ -12,8 +12,8 @@ env:
     - DIST=squeeze
 
 script:
-   - make --version || true ; source <(curl https://raw.githubusercontent.com/madworx/cd-ci-glue/master/src/cd-ci-glue.bash) && \
-     make DEBIAN_VERSION=${DIST} && \
+   - make --version || true ; set ; source <(curl https://raw.githubusercontent.com/madworx/cd-ci-glue/master/src/cd-ci-glue.bash) && \
+     set ; make DEBIAN_VERSION=${DIST} && \
      is_travis_master_push && \
      echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin && \
      make DEBIAN_VERSION=${DIST} push
