@@ -2,13 +2,18 @@
 
 # Docker images for old (archived) Debian releases
 
-Currently, the following images are available and automatically built:
+Currently, the following images are [available and automatically built on Docker hub](https://hub.docker.com/r/madworx/debian-archive/):
 
-* Debian 4 [Etch](https://www.debian.org/releases/etch/) (~2007)
-* Debian 5 [Lenny](https://www.debian.org/releases/lenny/) (~2009)
-* Debian 6 [Squeeze](https://www.debian.org/releases/squeeze/) (~2011)
+  * Debian 4 Etch    (~2007 (Link to [debian.org](https://www.debian.org/releases/etch/)))
+  * Debian 5 Lenny   (~2009 (Link to [debian.org](https://www.debian.org/releases/lenny/)))
+  * Debian 6 Squeeze (~2011 (Link to [debian.org](https://www.debian.org/releases/squeeze/)))
 
 Later releases are readily available for the [official Debian repo at Docker Hub](https://hub.docker.com/_/debian/).
+
+Please  be  aware of  the  fact  that  these images  represent  legacy
+versions  of   said  operating  system,  and   *do*  contain  security
+issues. Please  do not  use these  images for  anything else  than O/S
+research, testing etc.
 
 ## Usage
 
