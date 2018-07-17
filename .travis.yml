@@ -23,5 +23,5 @@ jobs:
     - stage: Publish project description to Docker hub
       env: DIST
       script:
-        - source <(curl https://raw.githubusercontent.com/madworx/cd-ci-glue/master/src/cd-ci-glue.bash) && \
+        - source <(curl https://raw.githubusercontent.com/madworx/cd-ci-glue/master/src/cd-ci-glue.bash) && 
           is_travis_master_push && dockerhub_set_description madworx/debian-archive README.md
