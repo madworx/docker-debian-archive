@@ -10,8 +10,14 @@ Currently, the following images are available and automatically built:
 
 Later releases are readily available for the [official Debian repo at Docker Hub](https://hub.docker.com/_/debian/).
 
+## Usage
+
+```
+mad@maddev:~$ docker run --rm -it madworx/debian-archive:etch
+sh-3.1# cat /etc/debian_version
+4.0
+```
+
 ## Source
 
 Everything is hosted on [github](https://github.com/madworx/docker-debian-archive).
-
-
