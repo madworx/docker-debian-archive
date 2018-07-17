@@ -20,6 +20,7 @@ CURRENTLAST="$(docker inspect --format='{{ index .Config.Labels "last_modified_s
 
 if [ "x${CURRENTLAST}" == "x${LASTMOD}" ] ; then
     echo "Rebuild not needed - upstream has last modification ${LASTMOD}."
+    exit 1
 else
     #
     # We cannot build in one step, since the debootstrap process needs
