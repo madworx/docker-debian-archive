@@ -3,15 +3,27 @@ sudo: required
 services:
   - docker
 
+env:
+  matrix:
+    - DIST=lenny
+    - DIST=etch
+    - DIST=squeeze
+
 before_install:
-   - if [[ "${TRAVIS_BRANCH}" == "master" ]] ; then
-       echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin ;
-     fi
+   - source <(curl https://raw.githubusercontent.com/madworx/cd-ci-glue/master/src/cd-ci-glue.bash)
      
 script:
-   - for DIST in lenny etch squeeze ; do 
-       make DEBIAN_VERSION=${DIST} && 
-       if [[ "${TRAVIS_BRANCH}" == "master" ]] ; then
-         make DEBIAN_VERSION=${DIST} push ;
-       fi
+       make DEBIAN_VERSION=${DIST} \
+       && is_travis_master_push    \
+       && echo "${DOCKER_PASSWORD}" | docker login -u "${DOCKER_USERNAME}" --password-stdin \
+       && make DEBIAN_VERSION=${DIST} push
      done
+
+jobs:
+  include:
+    - stage: Publish project description to Docker hub
+      env: DIST
+      script:
+        - true
+      after_success:
+        - is_travis_master_push && dockerhub_set_description madworx/debian-archive README.md
