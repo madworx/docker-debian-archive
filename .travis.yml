@@ -3,6 +3,7 @@ env:
     - DIST=lenny
     - DIST=etch
     - DIST=squeeze
+    - DIST=wheezy
 
 language: c
 sudo: required
