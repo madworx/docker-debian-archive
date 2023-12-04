@@ -27,7 +27,7 @@ else
     # --privilege.
     #
     docker build -t debian-archived-builder . -f - <<EOF
-FROM debian:stretch-slim
+FROM debian:bookworm-slim
 RUN apt-get update && \
     apt-get install -y debootstrap
 ENTRYPOINT [ "/bin/bash", "-c" ]

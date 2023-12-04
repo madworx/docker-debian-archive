@@ -5,6 +5,7 @@ env:
     - DIST=squeeze
     - DIST=wheezy
     - DIST=jessie
+    - DIST=stretch
 
 language: c
 sudo: required
